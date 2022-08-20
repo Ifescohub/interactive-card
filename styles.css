@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+:root{
+    --ff: 'Space Grotesk', sans-serif;
+    --Linear-gradient: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-Violet: hsl(278, 68%, 11%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+   /*                  */
+   /*   COMPONENTS     */
+   /*                  */
+
+input,
+label,
+button,
+legend{
+    font: inherit;
+    color: var(--Very-dark-Violet);
+    border: none;
+    outline: none;
+}
+
+input[type="submit"],
+button{
+    cursor: pointer;
+    background: var(--Very-dark-Violet);
+    color: var(--White);
+    font-size: 1rem;
+    padding: 0.7rem;
+    border-radius: 10px;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+input[type="submit"]:hover,
+button:hover{
+    transform: translateY(-0.5rem);
+    
+}
+
+fieldset{
+    margin-block: 1rem
+}
+
+h1, h2{
+    font-weight: inherit;
+}
+
+body{
+    font-family: var(--ff);
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url(./images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 30% 100%;
+    color: var(--White);
+}
+
+.container{
+    width: 60rem;
+    display: flex;
+    align-items: center;
+}
+
+
+/* -----HEADER-----  */
+header{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem; 
+}
+
+[class*="bg-"]{
+    width: 25rem;
+}
+
+   /* Front Card */
+.front{
+    position: relative;
+}
+
+.description{
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+    width: 25rem;
+}
+
+.description h1{
+    margin-block: 2rem 1.5rem;
+    letter-spacing: 0.1rem;
+    height: 2rem
+}
+
+.description .details{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6rem;
+}
+
+
+   /* Back Card  */
+.back{
+    position: relative;
+    align-self: flex-end;
+}
+
+.back h2{
+    position: absolute;
+    top: 43%;
+    right: 11%;
+}
+
+
+/* ------SECTION--------  */
+section{
+    flex-basis: 100%;
+    padding: 3rem;
+}
+
+fieldset{
+    border: none;
+}
+
+legend{
+    text-transform: uppercase; 
+    font-weight: bold;
+}
+
+input:not(input[type="submit"]){
+    border: 2px solid var(--Light-grayish-violet);
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-block: 0.5rem 1.5rem;
+    padding: 1rem;
+}
+
+::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+::placeholder{
+    color: var(--Light-grayish-violet);
+    font-size: 1rem
+}
+
+
+fieldset:nth-of-type(1) input{
+    width: 100%;
+}
+
+fieldset:nth-of-type(2){
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+fieldset:nth-child(2) *:first-child input{
+   width: 5rem;
+}
+
+.date{
+    display: flex;
+    gap: 0.5rem
+}
+
+
+ /* Javascript Error messsage formatting  */
+.error{
+    color: var(--Red);
+    font-size: 0.7rem;
+    font-weight: 500;
+    display: block;
+    margin-block: -1rem 1rem;
+}
+
+.red{
+    border: 2px solid var(--Red);
+    color: var(--Red);
+}
+
+.red:focus{
+    border: 2px solid var(--Red);
+}
+
+
+ /* Article  */
+ article{
+    text-align: center;
+ }
+
+ article h1{
+    color: var(--Very-dark-Violet);
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-block: 2rem 1rem;
+ }
+
+ article p{
+    color: var(--Dark-grayish-violet);
+    font-size: 1.2rem;
+    margin-block: 1rem 2.5rem;
+ }
+
+
+ /* Footer  */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    position: absolute;
+    bottom: 1rem;
+    color: var(--Red);
+}
+
+.attribution a { 
+    color: var(--Very-dark-Violet); 
+    text-decoration: none;
+}
+
+.attribution a:hover { 
+    text-decoration: overline;
+}
+
+
+/* -------------------------------MEDIA QUERIES-------------------------------------- */
+@media (max-width: 970px){      /*-------------TABLET SCREEN --------------*/
+    body{
+        font-size: 0.7rem;
+        background-size: 30% 100%;
+    }
+
+    .container{
+        width: 50rem;
+    }
+
+    /* -----HEADER-----  */
+    [class*="bg-"]{
+        width: 23rem;
+    }
+
+    /* Front Card */
+    .description{
+        padding: 1rem;
+        width: 23rem;
+    }
+
+    /* ------SECTION--------  */
+    section{
+        padding: 1rem;
+    }
+}
+
+
+
+@media (max-width: 850px){  /*-------------MOBILE SCREEN --------------*/
+
+    body{
+        height: unset;
+        background-image: url(./images/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        background-size: 100% 30%;
+    }
+
+    .container{
+        width: 30rem;
+        max-width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem auto 0;
+    }
+
+
+    /* -----HEADER-----  */
+    header{
+        flex-direction: column-reverse;
+        gap: 1rem; 
+        width: 100%;
+    }
+
+    /* Front Card */
+    .front{
+        position: absolute;
+        align-self: flex-start;
+        top: 9.9rem;
+        z-index: 1;
+    }
+
+    /* Back Card  */
+    .back{
+        position: relative;
+        align-self: flex-end;
+    }
+
+
+    /* ------SECTION--------  */
+    section{
+        padding-inline: 4rem;
+        margin-top: 9rem;
+    }
+
+    /* Article  */
+    article{
+        text-align: center;
+        margin-block: 2rem;
+    }
+
+
+    /* FOOTER  */
+    .attribution { 
+        position: unset;
+        margin-bottom: 2rem
+    }
+}
